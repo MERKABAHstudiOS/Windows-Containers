@@ -19,8 +19,11 @@
     .DESCRIPTION
         Queries the job limits from inside a process-isolated container
 
-    .PARAMETER Verbose 
-        If passed, dump verbose output
+    .PARAMETER LimitType 
+        Determines the type of limit to query.  The following values are supported:
+        - JobMemoryLimit: Returns the job memory limit in bytes
+        - PeakJobMemoryUsed: Returns the peak job memory used in bytes
+        - CpuRateControl: Returns the CPU rate control, if enabled, which is generally a cycle count out of a total of 10000
         
     .EXAMPLE
         .\Query-JobLimits.ps1
